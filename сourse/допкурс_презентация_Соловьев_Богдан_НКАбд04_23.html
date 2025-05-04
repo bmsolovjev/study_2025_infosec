@@ -1,0 +1,959 @@
+<!DOCTYPE html><html lang="ru-RU"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@charset "UTF-8";@import "https://fonts.bunny.net/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap";div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin:0.67em 0}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}/*!
+ * Marp / Marpit Gaia theme.
+ *
+ * @theme gaia
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code.hljs{display:block;overflow-x:auto;padding:1em}div#\:\$p > svg > foreignObject > section code.hljs{padding:3px 5px}div#\:\$p > svg > foreignObject > section .hljs{background:#000;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-comment,div#\:\$p > svg > foreignObject > section .hljs-quote{color:#aeaeae;font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-keyword,div#\:\$p > svg > foreignObject > section .hljs-selector-tag,div#\:\$p > svg > foreignObject > section .hljs-type{color:#e28964}div#\:\$p > svg > foreignObject > section .hljs-string{color:#65b042}div#\:\$p > svg > foreignObject > section .hljs-subst{color:#daefa3}div#\:\$p > svg > foreignObject > section .hljs-link,div#\:\$p > svg > foreignObject > section .hljs-regexp{color:#e9c062}div#\:\$p > svg > foreignObject > section .hljs-name,div#\:\$p > svg > foreignObject > section .hljs-section,div#\:\$p > svg > foreignObject > section .hljs-tag,div#\:\$p > svg > foreignObject > section .hljs-title{color:#89bdff}div#\:\$p > svg > foreignObject > section .hljs-class .hljs-title,div#\:\$p > svg > foreignObject > section .hljs-doctag,div#\:\$p > svg > foreignObject > section .hljs-title.class_{text-decoration:underline}div#\:\$p > svg > foreignObject > section .hljs-bullet,div#\:\$p > svg > foreignObject > section .hljs-number,div#\:\$p > svg > foreignObject > section .hljs-symbol{color:#3387cc}div#\:\$p > svg > foreignObject > section .hljs-params,div#\:\$p > svg > foreignObject > section .hljs-template-variable,div#\:\$p > svg > foreignObject > section .hljs-variable{color:#3e87e3}div#\:\$p > svg > foreignObject > section .hljs-attribute{color:#cda869}div#\:\$p > svg > foreignObject > section .hljs-meta{color:#8996a8}div#\:\$p > svg > foreignObject > section .hljs-formula{background-color:#0e2231;color:#f8f8f8;font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-addition{background-color:#253b22;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-deletion{background-color:#420e09;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-selector-class{color:#9b703f}div#\:\$p > svg > foreignObject > section .hljs-selector-id{color:#8b98ab}div#\:\$p > svg > foreignObject > section .hljs-emphasis{font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-strong{font-weight:700}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){margin:.5em 0 0}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) strong,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) strong,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) strong{font-weight:inherit}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6)::part(auto-scaling){max-height:580px}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:1.8em}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){font-size:1.5em}div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){font-size:1.3em}div#\:\$p > svg > foreignObject > section :is(h4, marp-h4){font-size:1.1em}div#\:\$p > svg > foreignObject > section :is(h5, marp-h5){font-size:1em}div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){font-size:.9em}div#\:\$p > svg > foreignObject > section blockquote,div#\:\$p > svg > foreignObject > section p{margin:1em 0 0}div#\:\$p > svg > foreignObject > section ol>li,div#\:\$p > svg > foreignObject > section ul>li{margin:.3em 0 0}div#\:\$p > svg > foreignObject > section ol>li>p,div#\:\$p > svg > foreignObject > section ul>li>p{margin:.6em 0 0}div#\:\$p > svg > foreignObject > section code{display:inline-block;font-family:Roboto Mono,monospace;font-size:.8em;letter-spacing:0;margin:-.1em .15em;padding:.1em .2em;vertical-align:baseline}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){display:block;margin:1em 0 0;overflow:visible}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code{box-sizing:border-box;font-size:.7em;margin:0;min-width:100%;padding:.5em}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)::part(auto-scaling){max-height:calc(580px - 1em)}div#\:\$p > svg > foreignObject > section blockquote{margin:1em 0 0;padding:0 1em;position:relative}div#\:\$p > svg > foreignObject > section blockquote:after,div#\:\$p > svg > foreignObject > section blockquote:before{content:"“";display:block;font-family:Times New Roman,serif;font-weight:700;position:absolute}div#\:\$p > svg > foreignObject > section blockquote:before{left:0;top:0}div#\:\$p > svg > foreignObject > section blockquote:after{bottom:0;right:0;transform:rotate(180deg)}div#\:\$p > svg > foreignObject > section blockquote>:first-child{margin-top:0}div#\:\$p > svg > foreignObject > section mark{background:transparent}div#\:\$p > svg > foreignObject > section table{border-collapse:collapse;border-spacing:0;margin:1em 0 0}div#\:\$p > svg > foreignObject > section table td,div#\:\$p > svg > foreignObject > section table th{border-style:solid;border-width:1px;padding:.2em .4em}div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header,div#\:\$p > svg > foreignObject > section:after{box-sizing:border-box;font-size:66%;height:70px;line-height:50px;overflow:hidden;padding:10px 25px;position:absolute}div#\:\$p > svg > foreignObject > section:after{--marpit-root-font-size:66%;}div#\:\$p > svg > foreignObject > section header{top:0}div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header{left:0;right:0}div#\:\$p > svg > foreignObject > section footer{bottom:0}div#\:\$p > svg > foreignObject > section{background-color:var(--color-background);background-image:linear-gradient(135deg, hsla(0,0%,53%,0), hsla(0,0%,53%,.02) 50%, hsla(0,0%,100%,0) 0, hsla(0,0%,100%,.05));color:var(--color-foreground);font-family:Lato,Avenir Next,Avenir,Trebuchet MS,Segoe UI,sans-serif;font-size:35px;height:720px;letter-spacing:1.25px;line-height:1.35;padding:70px;width:1280px;word-wrap:break-word;--color-background:#fff8e1;--color-background-stripe:rgba(69,90,100,.1);--color-foreground:#455a64;--color-dimmed:#6a7a7d;--color-highlight:#0288d1;}div#\:\$p > svg > foreignObject > section{--marpit-root-font-size:35px;}div#\:\$p > svg > foreignObject > section:after{bottom:0;font-size:80%;right:0}div#\:\$p > svg > foreignObject > section:after{--marpit-root-font-size:80%;}div#\:\$p > svg > foreignObject > section a,div#\:\$p > svg > foreignObject > section mark{color:var(--color-highlight)}div#\:\$p > svg > foreignObject > section code{background:var(--color-dimmed);color:var(--color-background)}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) strong,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) strong,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) strong{color:var(--color-highlight)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){background:var(--color-foreground)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)>code{background:transparent}div#\:\$p > svg > foreignObject > section blockquote:after,div#\:\$p > svg > foreignObject > section blockquote:before,div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header,div#\:\$p > svg > foreignObject > section section:after{color:var(--color-dimmed)}div#\:\$p > svg > foreignObject > section table td,div#\:\$p > svg > foreignObject > section table th{border-color:var(--color-foreground)}div#\:\$p > svg > foreignObject > section table thead th{background:var(--color-foreground);color:var(--color-background)}div#\:\$p > svg > foreignObject > section table tbody>tr:nth-child(odd) td,div#\:\$p > svg > foreignObject > section table tbody>tr:nth-child(odd) th{background:var(--color-background-stripe, transparent)}div#\:\$p > svg > foreignObject > section>:first-child,div#\:\$p > svg > foreignObject > section>header:first-child+*{margin-top:0}div#\:\$p > svg > foreignObject > section:where(.invert){--color-background:#455a64;--color-background-stripe:rgba(255,248,225,.1);--color-foreground:#fff8e1;--color-dimmed:#dad8c8;--color-highlight:#81d4fa;}div#\:\$p > svg > foreignObject > section:where(.gaia){--color-background:#0288d1;--color-background-stripe:rgba(255,248,225,.1);--color-foreground:#fff8e1;--color-dimmed:#cce2de;--color-highlight:#81d4fa;}div#\:\$p > svg > foreignObject > section:where(.lead){align-items:stretch;flex-flow:column nowrap;place-content:safe center center}div#\:\$p > svg > foreignObject > section:where(.lead) :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h6, marp-h6){text-align:center}div#\:\$p > svg > foreignObject > section:where(.lead) p{text-align:center}div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h1, marp-h1),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h2, marp-h2),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h3, marp-h3),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h4, marp-h4),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h5, marp-h5),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h6, marp-h6),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>p{text-align:left}div#\:\$p > svg > foreignObject > section:where(.lead) ol>li>p,div#\:\$p > svg > foreignObject > section:where(.lead) ul>li>p{text-align:left}div#\:\$p > svg > foreignObject > section:where(.lead) table{margin-left:auto;margin-right:auto}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]{columns:initial!important;display:block!important;padding:0!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after{display:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"]{flex-direction:column}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split, 50%)}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure > figcaption{position:absolute;border:0;clip:rect(0, 0, 0, 0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"], div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"]{background:transparent!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"], div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"]{pointer-events:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]{width:100%;height:100%}
+</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="1" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<h1 id="%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D1%82%D0%B0%D1%86%D0%B8%D1%8F-%D0%BF%D0%BE-%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8E-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BA%D1%83%D1%80%D1%81%D0%B0">Презетация по прохождению дополнительного курса</h1>
+<h2 id="%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%82%D0%B8">Основы информационной безопасноти</h2>
+<h2 id="%D1%81%D0%BE%D0%BB%D0%BE%D0%B2%D1%8C%D0%B5%D0%B2-%D0%B1%D0%BE%D0%B3%D0%B4%D0%B0%D0%BD-%D0%BD%D0%BA%D0%B0%D0%B1%D0%B4-04-23">Соловьев Богдан НКАбд-04-23</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="2" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<h1 id="%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B5">Содержание</h1>
+<ol start="2">
+<li>Вторая глава</li>
+<li>Третья глава</li>
+<li>Четвёртая глава</li>
+<li>Литература</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="3" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<h1 id="%D0%B2%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%B3%D0%BB%D0%B0%D0%B2%D0%B0-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B2-%D1%81%D0%B5%D1%82%D0%B8">Вторая глава:  Безопасность в сети</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="4" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>А происходит между этими двумя событиями работа так называемых сетевых протоколов. Сетевой протокол - это некая последовательность правил, по которым, во-первых, устанавливается соединение между устройствами сети, то есть между вашим роутером, который, скорее всего, стоит у вас дома, и другими устройствами сети. И во-вторых, когда соединение установлено, начинается обмен данных, то есть с вашей стороны идет запрос в Сеть на открытие страницы поисковика, а к вам из Сети приходит страница этого поисковика.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="5" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Современные сетевые протоколы удобно описывать в виде модели протоколов, и современный Интернет работает в так называемой модели TCP/IP. Название TCP/IP состоит из двух самых популярных сетевых протоколов: это протокол TCP и протокол IP. Мы более подробно изучим эти протоколы далее в этой лекции. Сейчас важно понимать следующее: протокол TCP, если переводить его с английского, означает протокол управления передачей, и этот протокол отвечает за формирование пакетов данных. Все данные, которые передаются по сети, сформированы в некие пакеты, то есть в кусочки данных, в сегменты. И все данные, которые мы отправляем или получаем, мы получаем сегментировано по пакетам.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="6" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Второй протокол - протокол IP, ответственный за передачу этих пакетов от одной машины к другой машине. Иными словами, он ответственен за корректную адресацию пакетов в Сети.</p>
+<p>В модели TCP/IP существует несколько уровней, а именно 4. И сейчас мы рассмотрим последовательно все четыре уровня модели TCP/IP. На самом верхнем уровне, прикладном работают пользовательские программы, и задача прикладного уровня - обеспечить доступ для этих пользовательских программ к услугам Интернет.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="7" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Мы с вами пользуемся достаточно большим спектром программ в интернете, и каждая программа использует свой протокол. Например, браузеры и веб-страницы используют протокол HTTP или его современную версию HTTPS. Ни для кого не секрет, что URL странички начинается с HTTP или HTTPS. S означает, что мы общаемся с веб-страницей по зашифрованному каналу. И более подробно мы рассмотрим протокол HTTPS в следующей лекции. Вообще, протокол HTTP(S) является примером протокола прикладного уровня, по которому передаются веб-страницы. Кроме того, мы с вами можем скачивать или загружать какие-то файлы: для этого часто используется протокол FTP.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="8" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Кроме того, мы с вами пользуемся почтой, и для доставки и отправки имейлов существуют другие протоколы - протокол SMTP или протокол POP3. И в зависимости от того, что мы делаем интернете, работает тот или иной протокол прикладного уровня.</p>
+<p>Все эти протоколы прикладного уровня работают над транспортным уровнем, это следующий уровень в модели TCP/IP. Транспортный уровень обеспечивает передачу данных между процессами на одной машине или хосте (host). Хост - это устройство, которое подключено к интернету. Это может быть компьютер, смартфон. И транспортный уровень отвечает за корректное распределение пакетов между программами. То есть он знает, что какие-то данные пришли нам в Skype, какие-то данные пришли нам на почту, какие-то данные должны прийти в наш браузер. Кроме того, протокол транспортного уровня, ответственный за адресацию, должен понимать, для какого процесса пришёл тот или иной пакет. На транспортном уровне существует два примера протокола: первый - это TCP, в честь которого названа модель. Этот протокол, в отличие от второго примера – UDP, обеспечивает надежную передачу пакетов.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="9" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Так, например, почту или веб-страницы мы получаем по протоколу TCP. Мы знаем, что, если письмо пришло, то оно пришло, а если оно не пришло, если что-то произошло в сети, мы получаем уведомление, что письмо наше не пришло. TCP/IP как раз таки отвечает за надёжную доставку и отправку пакетов. Второй пример протокола транспортного уровня – это протокол UDP. В отличие от протокола TCP, он не обеспечивает надежную передачу данных, однако он обеспечивает скорость передачи данных, в то время как протокол TCP работает медленнее. Вы спросите: зачем нам нужно ненадёжное соединение? Как правило, протокол UDP используется, когда нам нужно передать быстро какие-то данные. Например, по протоколу UDP работает видеосвязь или голосовая связь, то есть Skype,</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="10" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Zoom или какие-то другие программы, для которых важно обеспечить скорость соединения, но необязательно надежность. Мы знаем, что при звонке мы можем зависнуть, изображение может заморозиться, и потом оно отвиснет, и мы сможем продолжить наше общение, но какие-то данные будут утеряны. Но, с другой стороны, мы передаем достаточно большое количество информации (а видеопоток - это большое количество информации) довольно быстро благодаря протоколу UDP.</p>
+<p>Транспортный уровень работает над следующим уровнем модели TCP, так называемым сетевым или межсетевым уровнем. В этом уровне принимает участие не только программа, не только наша машина, но уже наш роутер, то есть то устройство, к которому мы подключаемся, чтобы получить интернет.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="11" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Сетевой уровень ответственен за передачу данных между различными физическими сетями; так, например, мы можем подключиться с компьютера, подключаясь через WiFi-сеть, к другому компьютеру, который, быть может, подключен через проводной интернет. Мы знаем, что такое возможно, хотя эти две машины работают в разных сетях. Кроме того, на сетевом уровне работает протокол IP версии 4 (IPv4) или IP версии 6 (IPv6) или IPSec - это безопасная версия протоколов IP. И протокол IP нам обеспечивает маршрутизацию, то есть доставку пакета или данных от одной машины к другой машине.</p>
+<p>Сетевой уровень работает над так называемым канальным уровнем или самым низким уровнем модели TCP/IP. И в этой модели работает уже физика.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="12" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Здесь происходит физическая передача данных. И здесь мы уже будем говорить о пропускной способности канала, об обеспечении помехоустойчивости, и основные примеры протоколов канального уровня непосредственно связаны с тем, как мы передаем данные. Например, мы можем передавать данные по проводу, мы можем подключить свой компьютер по проводному интернету, и от нашего устройства, которое нам дает интернет, мы можем подключиться через провод к нашему компьютеру. В таком случае пример протокола канального уровня будет называться Ethernet. Наверное, более популярный на сегодняшний день пример протокола канального уровня - это WiFi или WLAN.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="13" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Но есть на самом деле еще много разных протоколов канального уровня, которые все-таки менее популярны. Основные два - это Ethernet и WLAN.</p>
+<p>Вот эти четыре уровня модели TCP/IP и происходят между тем, как мы запросили на нашей машине открыть какую-то веб-страницу. То есть наш запрос происходит через прикладной уровень от браузера в транспортный уровень, который понимает, что это идет от браузера, в сеть, которая нам говорит, что мы хотим получить такой-то веб-сайт. И мы передаем всю эту информации в виде бит, в виде потока данных в сеть. И для того, чтобы получить назад ответ, происходит ровно тот же самый протокол, тот же самый алгоритм.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="14" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>По канальному уровню наш запрос передается в сетевой уровень, затем в транспортный и прикладной, где на сервере, на котором находится наш запрос, где лежит yandex.ru, запрос обрабатывается, и мы получаем с вами на нашем компьютере и в нашем браузере страницу yandex.ru. Далее мы с вами рассмотрим подробно, как работают два основных протокола модели TCP/IP. Это протокол TCP и протокол IP.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="15" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p><img src="./images/1.png" alt="" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="16" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol>
+<li>Протокол TCP (Transport Control Protocol)<br />
+Задача: Обеспечить надёжную передачу данных между процессами на разных машинах (например, между браузером и веб-сервером).</li>
+</ol>
+<p>Адресация: Использует порты (числа от 1 до 65535). Примеры:</p>
+<p>HTTP/HTTPS — порты 80 и 443.</p>
+<p>SMTP (почта) — порт 25.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="17" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Принцип работы:</p>
+<p>Разбивает данные на сегменты фиксированной длины.</p>
+<p>Каждому сегменту присваивает порядковый номер.</p>
+<p>Отправляет сегменты поочерёдно и ждёт подтверждения (ACK) от получателя перед отправкой следующего.</p>
+<p>Если подтверждение не пришло, сегмент отправляется повторно.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="18" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="2">
+<li>Протокол IP (Internet Protocol)<br />
+Задача: Доставка пакетов до нужного адреса (маршрутизация).</li>
+</ol>
+<p>IP-адреса:</p>
+<p>IPv4: 4 числа от 0 до 255 (например, 192.168.1.1). Всего ~4 млрд адресов (исчерпаем).</p>
+<p>IPv6: 8 шестнадцатеричных чисел (например, 2001:0db8:85a3::8a2e:0370:7334). Практически неисчерпаем.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="19" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Структура адреса:</p>
+<p>Первая часть — номер сети (как &quot;индекс и улица&quot;).</p>
+<p>Вторая часть — номер хоста (как &quot;номер дома&quot;).</p>
+<p>Разделение определяется маской сети.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="20" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="3">
+<li>Как работает передача данных?<br />
+Пользователь вводит URL (например, yandex.ru) в браузер.</li>
+</ol>
+<p>DNS-сервер преобразует доменное имя в IP-адрес (например, 77.88.55.77).</p>
+<p>TCP разбивает запрос на сегменты, IP маршрутизирует их через транзитные узлы (маршрутизаторы).</p>
+<p>Пакеты проходят несколько &quot;прыжков&quot; (можно отследить через traceroute).</p>
+<p>Сервер отправляет ответ по IP и порту клиента.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="21" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="4">
+<li>Дополнительно<br />
+География влияет на скорость: Чем дальше сервер, тем больше &quot;прыжков&quot; и выше задержка.</li>
+</ol>
+<p>Анонимность: IP-адрес можно скрыть (VPN, Tor).</p>
+<p>Traceroute: Утилита для отслеживания пути пакета (например, traceroute yandex.ru).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="22" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Итог<br />
+TCP отвечает за надёжность (порты, сегменты, подтверждения).</p>
+<p>IP отвечает за доставку (адресация, маршрутизация).</p>
+<p>DNS связывает доменные имена с IP-адресами.</p>
+<p>Следующая тема: безопасность на прикладном уровне (HTTP/HTTPS).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="23" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol>
+<li>Что такое Tor?<br />
+Tor (The Onion Router) — сеть для анонимного обмена данными и браузер, использующий луковую маршрутизацию.</li>
+</ol>
+<p>Цели:</p>
+<p>Анонимность пользователя.</p>
+<p>Конфиденциальность передаваемых данных.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="24" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="2">
+<li>Отличие от классической маршрутизации (TCP/IP)<br />
+В обычном интернете:</li>
+</ol>
+<p>Каждый промежуточный узел (маршрутизатор) знает IP отправителя и получателя.</p>
+<p>В Tor:</p>
+<p>Только охранный узел знает отправителя, а выходной узел — получателя.</p>
+<p>Промежуточные узлы не знают ни источник, ни назначение трафика.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="25" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="3">
+<li>Как работает луковая маршрутизация?<br />
+Три типа узлов:</li>
+</ol>
+<p>Охранный (Guard) — знает IP отправителя, но не знает содержимого данных.</p>
+<p>Промежуточный (Middle) — не знает ни отправителя, ни получателя.</p>
+<p>Выходной (Exit) — знает получателя, но не знает отправителя.</p>
+<p>Фиксированное число узлов: Всегда 3 (меньше — недостаточно анонимности, больше — не повышает безопасность).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="26" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="4">
+<li>Механизм шифрования<br />
+Генерация ключей:</li>
+</ol>
+<p>Отправитель создает общие ключи с каждым узлом (A, B, C) через криптографические алгоритмы (например, из TLS).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="27" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Многослойное шифрование:</p>
+<p>Данные шифруются трижды (как слои лука):</p>
+<p>Сначала для выходного узла (C), затем для промежуточного (B), потом для охранного (A).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="28" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Передача и дешифровка:</p>
+<p>Охранный узел (A) снимает свой слой шифра, видит адрес следующего узла (B) и передаёт данные.</p>
+<p>Промежуточный узел (B) дешифрует свой слой и передаёт пакет выходному узлу (C).</p>
+<p>Выходной узел (C) расшифровывает финальный слой и отправляет данные получателю.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="29" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="5">
+<li>Особенности Tor<br />
+Анонимность:</li>
+</ol>
+<p>Реальный IP-адрес пользователя скрыт (сервисы видят только IP выходного узла).</p>
+<p>Выходные узлы могут находиться в любой стране (например, Швейцария, США, Эстония).</p>
+<p>Ограничения:</p>
+<p>Скорость: Медленнее обычного интернета из-за многократного шифрования.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="30" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Запреты: В некоторых странах (включая РФ) запрещено быть узлом Tor, но можно использовать браузер.</p>
+<p>Уязвимости: Существуют атаки на Tor (например, анализ трафика), но полной деанонимизации сложно достичь.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="31" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="6">
+<li>Пример использования<br />
+Браузер Tor выглядит как Firefox или Chrome.</li>
+</ol>
+<p>При запросе сайта (например, google.com) язык и контент могут меняться в зависимости от страны выходного узла.</p>
+<p>Сервисы для проверки IP показывают адрес выходного узла, а не пользователя.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="32" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p><img src="./images/2.jfif" alt="" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="33" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol>
+<li>Основы Wi-Fi<br />
+Wi-Fi — технология беспроводной локальной сети на основе стандарта IEEE 802.11.</li>
+</ol>
+<p>Стандарты:</p>
+<p>802.11 (1997 г.) — первый стандарт (1.2 Мбит/с, инфракрасный порт).</p>
+<p>802.11ac (Wi-Fi 5) — современный стандарт (до 6 Гбит/с).</p>
+<p>802.11ax (Wi-Fi 6) и 802.11be (будущий) — скорости свыше 30 Гбит/с.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="34" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Wi-Fi Alliance — организация, сертифицирующая устройства на соответствие стандартам.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="35" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="2">
+<li>Уровень работы Wi-Fi<br />
+Работает на канальном уровне модели TCP/IP (аналогично Ethernet, но без проводов).</li>
+</ol>
+<p>Функции:</p>
+<p>Модуляция сигнала.</p>
+<p>Контроль за помехами между разными Wi-Fi сетями.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="36" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="3">
+<li>Режимы работы Wi-Fi<br />
+Инфраструктурный режим:</li>
+</ol>
+<p>Классическая схема с роутером, раздающим интернет.</p>
+<p>Идентификатор сети — SSID (Service Set Identifier).</p>
+<p>Ad-Hoc режим:</p>
+<p>Прямое соединение устройств без роутера (например, раздача интернета с телефона).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="37" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="4">
+<li>Безопасность Wi-Fi<br />
+Устаревшие методы (небезопасны)<br />
+WEP (Wired Equivalent Privacy):</li>
+</ol>
+<p>Использовал короткий ключ (40 бит).</p>
+<p>Легко взламывается.</p>
+<p>Современные методы<br />
+WPA/WPA2/WPA3:</p>
+<p>Используют шифрование AES (ключ 128+ бит).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="38" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Аутентификация:</p>
+<p>WPA Personal — по паролю (для домашних сетей).</p>
+<p>WPA Enterprise — через базу данных пользователей (для корпоративных сетей).</p>
+<p>Особенности WPA3:</p>
+<p>Защита даже слабых паролей (например, &quot;12345&quot;).</p>
+<p>Forward Secrecy — при каждом новом подключении генерируется новый ключ (безопасность даже при утечке старого пароля).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="39" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="5">
+<li>Рекомендации по безопасности<br />
+Используйте WPA3 (или WPA2, если WPA3 недоступен).</li>
+</ol>
+<p>Избегайте WEP и открытых сетей (без пароля).</p>
+<p>Для корпоративных сетей предпочтительна WPA Enterprise.</p>
+<p>Итог<br />
+Wi-Fi обеспечивает удобство, но требует надежного шифрования (WPA3).</p>
+<p>Безопасность зависит от выбора протокола и сложности пароля.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="40" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p><img src="./images/3.jpeg" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="41" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<h1 id="%D1%82%D1%80%D0%B5%D1%82%D1%8C%D1%8F-%D0%B3%D0%BB%D0%B0%D0%B2%D0%B0-%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%B0-%D0%BF%D0%BA%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%B0">Третья глава: Защита ПК/телефона</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="42" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol>
+<li>Зачем шифровать жесткий диск?<br />
+Основная цель: Защита персональных данных при утере или краже устройства.</li>
+</ol>
+<p>Примеры рисков:</p>
+<p>Утечка паролей, документов, конфиденциальной информации.</p>
+<p>Корпоративные требования: Компании (Google, Яндекс) и университеты часто обязывают сотрудников шифровать корпоративные устройства.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="43" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="2">
+<li>Принцип работы шифрования<br />
+Генерация ключа:</li>
+</ol>
+<p>Программа создает криптографический ключ (например, 256-битный для AES).</p>
+<p>Пользователь задает пароль для доступа к ключу (не сам ключ!).</p>
+<p>Шифрование данных:</p>
+<p>Ключ применяется ко всем данным на диске/разделе (файлы, загрузочный сектор).</p>
+<p>Данные преобразуются в нечитаемый формат.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="44" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Дешифровка:</p>
+<p>При вводе пароля система получает ключ и расшифровывает данные &quot;на лету&quot;.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="45" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="3">
+<li>Технические детали<br />
+Алгоритм: AES (Advanced Encryption Standard) — симметричное шифрование.</li>
+</ol>
+<p>Реализован на аппаратном уровне (TPM-модуль в процессорах Intel/AMD).</p>
+<p>Минимальные задержки при работе (шифрование/дешифровка в фоновом режиме).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="46" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>TPM (Trusted Platform Module):</p>
+<p>Криптопроцессор для безопасного хранения ключей.</p>
+<p>Защищает ключ от извлечения злоумышленником.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="47" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="4">
+<li>Что можно шифровать?<br />
+Весь жесткий диск (включая систему).</li>
+</ol>
+<p>Отдельные разделы/флешки.</p>
+<p>Загрузочный сектор:</p>
+<p>Требует ввода пароля при включении компьютера.</p>
+<p>Пример: BitLocker (Windows), FileVault (macOS).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="48" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="5">
+<li>Где хранить ключ?<br />
+Не на зашифрованном диске (иначе доступ невозможен при утере пароля).</li>
+</ol>
+<p>Варианты:</p>
+<p>Физические носители (флешка, токен).</p>
+<p>Облачное хранилище (например, у антивирусных компаний).</p>
+<p>Администратор сети (для корпоративных устройств).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="49" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="6">
+<li>Программы для шифрования<br />
+Встроенные утилиты:</li>
+</ol>
+<p>Windows: BitLocker.</p>
+<p>macOS: FileVault.</p>
+<p>Linux: LUKS.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="50" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Сторонние решения:</p>
+<p>VeraCrypt (open-source).</p>
+<p>PGPDisk.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="51" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="7">
+<li>Важные моменты<br />
+Длина ключа: 256 бит (AES-256) — обеспечивает высокую стойкость.</li>
+</ol>
+<p>Пароль ≠ ключ: Пароль лишь разблокирует доступ к ключу.</p>
+<p>Рекомендации:</p>
+<p>Шифруйте не только диск, но и съемные носители (флешки).</p>
+<p>Используйте TPM-модуль для защиты ключа.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="52" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Итог:<br />
+Шифрование носителей — обязательная мера для защиты данных. Современные инструменты (AES, TPM) делают процесс безопасным и незаметным для пользователя.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="53" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol>
+<li>Что такое пароль?<br />
+Пароль — это средство аутентификации, используемое для:</li>
+</ol>
+<p>Входа в соцсети, почту, банковские сервисы.</p>
+<p>Разблокировки устройств (PIN, отпечаток пальца, графический ключ).</p>
+<p>Доступа к электронным кошелькам (например, 12-словная seed-фраза в Bitcoin).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="54" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="2">
+<li>Критерии стойкости пароля<br />
+Основная угроза — перебор (брутфорс). Стойкость зависит от:</li>
+</ol>
+<p>Длины:</p>
+<p>Пароль из 6 цифр: 10^6 = 1 млн вариантов → взламывается за секунду.</p>
+<p>Пароль из 8 символов (буквы + цифры): 36^8 ≈ 3 трлн вариантов → сложно подобрать.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="55" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Алфавита:</p>
+<p>Цифры (0-9) + буквы (a-z, A-Z) + спецсимволы (!@#) резко увеличивают сложность.</p>
+<p>Рекомендации:</p>
+<p>Используйте пароли длиной от 12 символов.</p>
+<p>Включайте верхний/нижний регистр, цифры, спецсимволы.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="56" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="3">
+<li>Типичные ошибки<br />
+Частые пароли: 12345, password, qwerty — легко взламываются.</li>
+</ol>
+<p>Повторение паролей на разных сервисах → компрометация одного аккаунта угрожает остальным.</p>
+<p>Утечки баз данных: Пароли из LinkedIn, eBay и других сервисов часто оказываются в даркнете.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="57" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="4">
+<li>Защита от перебора<br />
+Ограничение попыток: Например, 3 попытки для PIN-кода.</li>
+</ol>
+<p>Капча: Тест для отличия человека от бота (например, выбор изображений с мостами).</p>
+<p>Недостатки:</p>
+<p>Сложность для людей с плохим зрением.</p>
+<p>ИИ научился обходить некоторые капчи.</p>
+<p>Злоумышленники нанимают людей для решения капч.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="58" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="5">
+<li>Хранение паролей на сервере<br />
+Пароли никогда не хранятся в открытом виде. Используется:</li>
+</ol>
+<p>Хэш-функция: Преобразует пароль в строку фиксированной длины (например, SHA-256).</p>
+<p>Свойства:</p>
+<p>Необратимость: По хэшу нельзя восстановить пароль.</p>
+<p>Детерминированность: Один и тот же пароль → одинаковый хэш.</p>
+<p>Примеры: SHA-2, SHA-3, ГОСТ Р 34.11-2018.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="59" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Механизм работы:</p>
+<p>Пользователь регистрируется с паролем 4@w&amp;t2!.</p>
+<p>Сервер сохраняет не пароль, а его хэш: hash(4@w&amp;t2!).</p>
+<p>При следующем входе сервер сверяет хэш присланного пароля с сохранённым.</p>
+<p>Защита слабых паролей — &quot;соль&quot; (salt):</p>
+<p>Сервер добавляет к паролю случайную строку (например, 12345 + s8d2f1).</p>
+<p>Хранится хэш от &quot;пароль + соль&quot; и сама соль.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="60" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Зачем? Чтобы даже слабые пароли (12345) не совпадали с предвычисленными хэшами из словарей.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="61" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="6">
+<li>Где хранить пароли?<br />
+Менеджеры паролей:</li>
+</ol>
+<p>KeePassXC (кроссплатформенный).</p>
+<p>Keychain Access (macOS).</p>
+<p>Мастер-пароль: Достаточно запомнить один сложный пароль для доступа ко всем остальным.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="62" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="7">
+<li>Рекомендации<br />
+Используйте длинные и сложные пароли.</li>
+</ol>
+<p>Не повторяйте пароли на разных сервисах.</p>
+<p>Меняйте пароли регулярно (особенно для почты и банковских аккаунтов).</p>
+<p>Проверяйте утечки на haveibeenpwned.com.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="63" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Итог:</p>
+<p>Стойкость пароля зависит от длины и разнообразия символов.</p>
+<p>Серверы хранят хэши паролей с &quot;солью&quot; для защиты от утечек.</p>
+<p>Менеджеры паролей — лучший способ безопасного хранения.</p>
+<p>Ключевые термины:</p>
+<p>Брутфорс — атака перебором.</p>
+<p>Хэш-функция — криптографическое преобразование пароля.</p>
+<p>Соль (salt) — случайные данные для усиления стойкости хэша.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="64" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Для углублённого изучения:</p>
+<p>Атаки радужных таблиц (rainbow tables).</p>
+<p>Двухфакторная аутентификация (2FA).</p>
+<p>Биометрическая аутентификация (отпечатки, Face ID).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="65" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol>
+<li>Что такое фишинг?<br />
+Фишинг (от англ. to fish — «ловить рыбу») — это метод мошенничества, при котором злоумышленники выманивают конфиденциальные данные (логины, пароли, банковские реквизиты), маскируясь под доверенные сервисы или организации.</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="66" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="2">
+<li>Типы фишинговых атак<br />
+Адресный фишинг (email-фишинг):</li>
+</ol>
+<p>Рассылка писем с поддельными ссылками на фальшивые сайты (например, поддельный «ВКонтакте»: vk.club5.ru).</p>
+<p>Цель: заставить пользователя ввести свои данные на поддельной странице.</p>
+<p>Телефонный фишинг (вишинг):</p>
+<p>Звонки от якобы банков или служб поддержки с просьбой сообщить реквизиты карт или коды подтверждения.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="67" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Календарный фишинг:</p>
+<p>Рассылка ссылок на «события» в календаре, которые ведут на вредоносные сайты.</p>
+<p>Фишинг в мессенджерах:</p>
+<p>Поддельные сообщения в WhatsApp, Telegram и др. с просьбой перейти по ссылке или скачать файл.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="68" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="3">
+<li>Как работает email-фишинг?<br />
+Подделка домена: Ссылка выглядит как настоящая, но ведет на фальшивый сайт (например, vk.club5.ru вместо vk.com).</li>
+</ol>
+<p>Отсутствие HTTPS: Поддельные сайты часто используют незащищенный протокол HTTP.</p>
+<p>Email spoofing: Мошенники подменяют адрес отправителя, чтобы письмо казалось отправленным от знакомого или организации.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="69" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="4">
+<li>Защита от спуфинга (spoofing)<br />
+SPF (Sender Policy Framework): Проверяет, разрешено ли отправителю использовать данный IP-адрес.</li>
+</ol>
+<p>DMARC (Domain-based Message Authentication): Определяет, что делать с письмами, которые не прошли проверку (отклонить или пометить как спам).</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="70" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="5">
+<li>Как распознать фишинг?<br />
+Подозрительные ссылки: Наведите курсор на ссылку (не кликая!), чтобы увидеть настоящий URL.</li>
+</ol>
+<p>Неожиданные письма: Даже от «знакомых» — перепроверяйте через другой канал связи.</p>
+<p>Грамматические ошибки: Часто встречаются в фишинговых письмах.</p>
+<p>Давление: Фразы вроде «Срочно!», «Ваш аккаунт будет заблокирован!» — признаки мошенничества.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="71" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="6">
+<li>Как защититься?<br />
+Не переходите по подозрительным ссылкам и не скачивайте вложения из непроверенных писем.</li>
+</ol>
+<p>Проверяйте домен сайта: Официальные сервисы используют HTTPS и корректные домены (например, yandex.ru, а не yandex.club1.com).</p>
+<p>Включите двухфакторную аутентификацию (2FA) для важных аккаунтов.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="72" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Используйте почтовые сервисы с защитой (Gmail, Яндекс.Почта, Outlook), которые фильтруют спам.</p>
+<p>Обучайте антиспам-фильтры: Помечайте фишинговые письма как спам.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="73" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="7">
+<li>Что делать, если вы попались на фишинг?<br />
+Немедленно смените пароль на взломанном аккаунте.</li>
+</ol>
+<p>Если ввели данные карты — заблокируйте ее и сообщите в банк.</p>
+<p>Включите 2FA для всех важных сервисов.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="74" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="74" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Итог:<br />
+Фишинг остается одной из самых распространенных киберугроз. Защита строится на внимательности и использовании технических средств (SPF, DMARC, HTTPS).</p>
+<p>Ключевые термины:</p>
+<p>Спуфинг (spoofing) — подмена отправителя (email, IP).</p>
+<p>SPF/DMARC — протоколы проверки подлинности писем.</p>
+<p>2FA — двухфакторная аутентификация.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="75" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="75" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol>
+<li>Требования к безопасности мессенджеров<br />
+Целостность сообщений - гарантия, что сообщение не было изменено при передаче.</li>
+</ol>
+<p>Конфиденциальность - доступ к сообщению имеют только отправитель и получатель.</p>
+<p>Аутентичность - подтверждение личности отправителя.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="76" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="76" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Доставка сообщений - устойчивость к потерям при временном отсутствии связи.</p>
+<p>Прямая секретность (Forward Secrecy) - защита прошлых сообщений при компрометации текущего ключа.</p>
+<p>Пост-компрометационная безопасность - возможность восстановить конфиденциальность после утечки ключа.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="77" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="77" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="2">
+<li>Протокол Signal<br />
+Разработчик: Open Whisper Systems</li>
+</ol>
+<p>Используется в: WhatsApp, Facebook Messenger, Skype, собственном мессенджере Signal</p>
+<p>Особенности:</p>
+<p>Открытый исходный код</p>
+<p>Регулярно обновляется</p>
+<p>Ориентирован на максимальную конфиденциальность</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="78" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="78" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="3">
+<li>Сквозное шифрование (E2EE)<br />
+Принцип работы:</li>
+</ol>
+<p>Сервер выступает только как маршрутизатор, не имея доступа к содержимому сообщений.</p>
+<p>Сообщения шифруются на устройстве отправителя и расшифровываются только на устройстве получателя.</p>
+<p>Процесс обмена сообщениями:</p>
+<p>Обмен ключами:</p>
+<p>Каждый пользователь имеет пару ключей: открытый и закрытый</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="79" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="79" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Открытые ключи публикуются на сервере</p>
+<p>Генерация общего ключа:</p>
+<p>Используется алгоритм Диффи-Хеллмана</p>
+<p>Позволяет создать общий секретный ключ без его передачи по сети</p>
+<p>Шифрование сообщений:</p>
+<p>Для каждого сеанса связи генерируется новый ключ</p>
+<p>Обеспечивает прямую секретность</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="80" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="80" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="4">
+<li>Групповые чаты<br />
+Особенности реализации:</li>
+</ol>
+<p>Каждый участник группы имеет свой ключ шифрования</p>
+<p>Отправитель шифрует сообщение своим ключом</p>
+<p>Получатели используют заранее полученные ключи отправителя для расшифровки</p>
+<p>При добавлении нового участника требуется обмен ключами со всеми членами группы</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="81" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="81" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="5">
+<li>Преимущества протокола Signal<br />
+Высокий уровень безопасности:</li>
+</ol>
+<p>Реализует все основные требования к защите сообщений</p>
+<p>Использует современные криптографические алгоритмы</p>
+<p>Децентрализация:</p>
+<p>Сервер не имеет доступа к содержимому сообщений</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="82" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="82" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Гибкость:</p>
+<p>Поддерживает как индивидуальные, так и групповые чаты</p>
+<p>Открытость:</p>
+<p>Возможность независимой проверки реализации</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="83" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="83" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="6">
+<li>Рекомендации по безопасности<br />
+Используйте мессенджеры с поддержкой протокола Signal</li>
+</ol>
+<p>Регулярно обновляйте приложение для получения последних улучшений безопасности</p>
+<p>Включайте двухфакторную аутентификацию</p>
+<p>Проверяйте ключи безопасности (Safety Numbers) при важных переписках</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="84" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="84" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p><img src="./images/4.png" alt="" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="85" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="85" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<h1 id="%D1%87%D0%B5%D1%82%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%8F-%D0%B3%D0%BB%D0%B0%D0%B2%D0%B0-%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B5">Четвертая глава: Криптография на практике</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="86" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="86" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol>
+<li>Классификация криптографических протоколов<br />
+Симметричная криптография:</li>
+</ol>
+<p>Обе стороны используют один общий секретный ключ</p>
+<p>Примеры: симметричное шифрование, коды аутентификации сообщений (MAC)</p>
+<p>Проблема: сложность безопасного обмена ключами</p>
+<p>Асимметричная криптография:</p>
+<p>Каждая сторона имеет пару ключей (публичный и приватный)</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="87" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="87" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Примеры: цифровая подпись, протоколы обмена ключами</p>
+<p>Решает проблему обмена ключами</p>
+<p>Бесключевые примитивы:</p>
+<p>Криптографические хэш-функции</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="88" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="88" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="2">
+<li>Криптографические хэш-функции<br />
+Свойства:</li>
+</ol>
+<p>Преобразуют данные произвольной длины в фиксированный хэш</p>
+<p>Стойкость к коллизиям (невозможно найти два разных входа с одинаковым хэшем)</p>
+<p>Необратимость (по хэшу нельзя восстановить исходные данные)</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="89" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="89" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Применение:</p>
+<p>Хранение паролей</p>
+<p>Проверка целостности данных</p>
+<p>Блокчейн (proof-of-work)</p>
+<p>Примеры: SHA-2, SHA-3, ГОСТ Р 34.11-2012</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="90" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="90" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="3">
+<li>Симметричное шифрование<br />
+Компоненты:</li>
+</ol>
+<p>Генерация ключа</p>
+<p>Функция шифрования</p>
+<p>Функция дешифрования</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="91" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="91" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Свойства:</p>
+<p>Один ключ для шифрования и дешифрования</p>
+<p>Высокая производительность</p>
+<p>Обеспечивает конфиденциальность</p>
+<p>Примеры: AES, ГОСТ 34.12-2018</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="92" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="92" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="4">
+<li>Симметричная аутентификация (MAC)<br />
+Коды аутентификации сообщений:</li>
+</ol>
+<p>Используют отдельный ключ для генерации кода</p>
+<p>Обеспечивают целостность данных</p>
+<p>Часто строятся на основе хэш-функций</p>
+<p>Комбинированное использование:</p>
+<p>Шифрование + MAC = конфиденциальность + целостность</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="93" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="93" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="5">
+<li>Асимметричные протоколы<br />
+Обмен ключами (Диффи-Хеллман):</li>
+</ol>
+<p>Позволяет сгенерировать общий секретный ключ через открытый канал</p>
+<p>Уязвим к MITM-атакам без дополнительной аутентификации</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="94" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="94" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Цифровая подпись:</p>
+<p>Компоненты:</p>
+<p>Генерация ключевой пары</p>
+<p>Подписание (с использованием приватного ключа)</p>
+<p>Верификация (с использованием публичного ключа)</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="95" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="95" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Свойства:</p>
+<p>Аутентификация отправителя</p>
+<p>Целостность документа</p>
+<p>Неотказуемость (non-repudiation)</p>
+<p>Применение:</p>
+<p>Обновление ПО</p>
+<p>SSL/TLS сертификаты</p>
+<p>Примеры: RSA, ECDSA, ГОСТ Р 34.20-2012</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="96" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="96" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="6">
+<li>Практическое применение<br />
+TLS/SSL:</li>
+</ol>
+<p>Асимметричная криптография для аутентификации и обмена ключами</p>
+<p>Симметричное шифрование для защиты данных</p>
+<p>Мессенджеры:</p>
+<p>Протокол Signal использует комбинацию Диффи-Хеллмана и цифровых подписей</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="97" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="97" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Блокчейн:</p>
+<p>Хэш-функции для proof-of-work</p>
+<p>Цифровые подписи для транзакций</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="98" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="98" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol>
+<li>Основные этапы платежа<br />
+Электронный платеж состоит из двух ключевых этапов:</li>
+</ol>
+<p>Авторизация - технический процесс с использованием криптографии, включающий:</p>
+<p>Проверку подлинности владельца карты</p>
+<p>Подтверждение банком-эмитентом наличия средств и отсутствия ограничений</p>
+<p>Транзакция - непосредственный перевод денежных средств</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="99" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="99" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="2">
+<li>Виды платежей<br />
+Существует два основных типа платежей:</li>
+</ol>
+<p>Физические платежи (Card Present)<br />
+Используются при наличии реальной карты, например в магазинах. Процесс включает:</p>
+<p>Прикладывание карты к терминалу</p>
+<p>Ввод PIN-кода</p>
+<p>Создание электронной подписи на основе секретного ключа карты</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="100" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="100" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Проверку подписи банком с помощью публичного ключа</p>
+<p>Онлайн-платежи (Card Not Present)<br />
+Для интернет-покупок используется протокол 3-D Secure (версия 2.0), в котором участвуют:</p>
+<p>Банк-эмитент (выдавший карту)</p>
+<p>Платежная система (Visa/Mastercard/МИР)</p>
+<p>Банк-эквайер (принимающий платеж)</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="101" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="101" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="3">
+<li>Как работает онлайн-оплата<br />
+Покупатель вводит данные карты на сайте</li>
+</ol>
+<p>Продавец обращается к платежной системе</p>
+<p>Система определяет банк-эмитент</p>
+<p>Банк проверяет возможность платежа</p>
+<p>Покупатель проходит многофакторную аутентификацию (например, через SMS)</p>
+<p>Банк подтверждает или отклоняет транзакцию</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="102" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="102" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="4">
+<li>Методы подтверждения личности<br />
+Для безопасности используются разные факторы:</li>
+</ol>
+<p>Знание (PIN, CVV-код)</p>
+<p>Владение (телефон для SMS, приложение банка)</p>
+<p>Биометрия (отпечаток пальца, распознавание лица)</p>
+<p>Местоположение (геолокация)</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="103" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="103" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="5">
+<li>Важные правила безопасности<br />
+Все соединения защищены протоколом TLS</li>
+</ol>
+<p>PIN-код используется только для платежей с физической картой</p>
+<p>CVV-код - только для онлайн-платежей</p>
+<p>Никогда и никому не сообщайте:</p>
+<p>PIN-код своей карты</p>
+<p>CVV-код (3 цифры на обороте)</p>
+<p>Коды из SMS</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="104" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="104" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol>
+<li>Ключевые понятия<br />
+Криптография (Crypto) ≠ Криптовалюта (Cryptocurrency)</li>
+</ol>
+<p>Криптография — наука о защите информации</p>
+<p>Криптовалюта — цифровые деньги на основе блокчейна</p>
+<p>Биткоин ≠ Блокчейн</p>
+<p>Биткоин — первая и самая популярная криптовалюта</p>
+<p>Блокчейн — технология, лежащая в основе биткоина и других криптовалют</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="105" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="105" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="2">
+<li>Основные свойства блокчейна<br />
+Децентрализация</li>
+</ol>
+<p>Нет центрального органа контроля (например, банка)</p>
+<p>Позволяет проводить транзакции без доверенной третьей стороны</p>
+<p>Консенсус — согласованность данных между участниками:</p>
+<p>Постоянство: данные нельзя удалить</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="106" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="106" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Единство: все участники видят одинаковую версию (кроме последних блоков)</p>
+<p>Живучесть: возможность добавлять новые транзакции</p>
+<p>Открытость: любой может стать участником (в публичных блокчейнах)</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="107" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="107" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="3">
+<li>Как устроен блокчейн?<br />
+Транзакции — переводы средств между участниками</li>
+</ol>
+<p>Подписываются секретным ключом отправителя (электронная подпись)</p>
+<p>Пример: &quot;Алиса → Бобу: 10 BTC&quot; + подпись Алисы</p>
+<p>Блоки — наборы транзакций</p>
+<p>Формируются майнерами</p>
+<p>Добавляются в цепочку (blockchain)</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="108" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="108" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Майнеры — участники, которые:</p>
+<p>Собирают транзакции в блок</p>
+<p>Решают криптографическую задачу (доказательство работы)</p>
+<p>Получают награду за добавление блока</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="109" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="109" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="4">
+<li>Механизмы консенсуса<br />
+Proof of Work (PoW) — доказательство работы</li>
+</ol>
+<p>Майнеры ищут x, чтобы h(x) имел заданное число нулей (например, 17)</p>
+<p>Требует больших вычислительных ресурсов (энергозатратно)</p>
+<p>Используется в Биткоине</p>
+<p>Proof of Stake (PoS) — доказательство доли владения</p>
+<p>Вероятность добавления блока зависит от количества монет у майнера</p>
+<p>Менее энергозатратно, но может привести к централизации</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="110" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="110" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Другие варианты:</p>
+<p>Proof of Space (использование дискового пространства)</p>
+<p>Proof of Authority (доверенные узлы)</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="111" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="111" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="5">
+<li>Проблемы и перспективы<br />
+Энергопотребление PoW:</li>
+</ol>
+<p>Криптофермы потребляют много электроэнергии</p>
+<p>Поиск более экологичных альтернатив (например, переход на PoS)</p>
+<p>Будущее криптовалют:</p>
+<p>Неясно, какая валюта станет основной</p>
+<p>Развитие новых механизмов консенсуса</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="112" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="112" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<ol start="6">
+<li>Вывод<br />
+Блокчейн решает сложную задачу децентрализованного учета транзакций без доверенного центра. Криптовалюты используют криптографию для защиты от подделки и двойных трат. Основные вызовы — энергоэффективность и масштабируемость.</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="113" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="113" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p><img src="./images/5.jpg" alt="" style="height:600px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="114" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="114" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<h1 id="%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0">Литература</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="115" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="115" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Базовые сетевые протоколы</p>
+<p>Более подробно об устройстве сети и сетевых протоколах можно:</p>
+<p>Прочитать (Дуглас Э. Камер - Сети TCP IP. Принципý, протоколý и структура (2003))<br />
+Посмореть «Компьютерные сети. Базовый учебный курс»<br />
+В ходе лекции были использованы:</p>
+<p>Cайт  REG.RU<br />
+Программа traceroute (в OS Windows носит название tracert)<br />
+Он-лайн версия прослеживания маршрута<br />
+Подробнее об истории создания DNS адресации можно прочитать</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="116" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="116" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Как развивалась система доменных имен: эра ARPANET<br />
+История системы доменных имен: первые DNS-серверы<br />
+История DNS: когда доменные имена стали платными<br />
+Обеспечение безопасности в сети. Протокол TLS</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="117" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="117" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>ssllabs.com - сайт, осуществляющий проверку установленного у Вас браузера на версию и конфигурацию TLS<br />
+Иллюстрация к работе TLS v.1.2, v. 1.3<br />
+Статья &quot;Первые несколько миллисекунд HTTPS соединения&quot;<br />
+Описание алгоритма генерации общего секретного ключа -- так называемого протокола Диффи-Хэллмана -- можно найти (! математика внутри)</p>
+<p>Статья с подробным описанием httmps</p>
+<p>Беспроводные сети Wi-fi</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="118" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="118" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Более подробно о технической реализации передачи данных по беспроводному типу описывается в видео-лекции<br />
+Данные, передаваемые по сети WiFi, делятся на так называемые кадры.  Как именно формируются кадры подробно описано в видео<br />
+О безопасности алгоритмы WPA3 можно подробно узнать в статьях</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="119" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="119" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>WPA3, улучшенное открытие [Enhanced Open], простое соединение [Easy Connect]: три новых протокола от Wi-Fi Alliance<br />
+Началась сертификация устройств WPA3: слабые пароли стали более безопасными<br />
+Персонализация в сети</p>
+<p>Cookie-стена — это вид cookie-баннера, который не даёт пользоваться веб-сайтом без предоставления согласия на размещение cookie-файлов.</p>
+<p>О законодательном регулировании cookie-стен в ЕС можно прочитать в статье «Почему Евросоюз искореняет cookie-стены»<br />
+Помимо обычных кук, существуют еще и суперкуки. Про из особенности можно прочитать в статье «Что такое куки и супер куки? И почему вторые представляют опасность?<br />
+Браузер TOR. Анонимизация</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="120" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="120" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Что такое “отпечаток” браузера, чем он плох можно прочесть в доступной для широкого круга читателя статье (в 2х частях)</p>
+<p>Часть 1<br />
+Часть 2<br />
+Лекция от MIT (на англ.) о приватном веб-браузинге</p>
+<p>Private Browsing<br />
+Защита ПК/телефона</p>
+<p>Пароли</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="121" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="121" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Хит-парад паролей<br />
+Статистический анализ паролей (упоминается в лекции)<br />
+Подробнее про соль для паролей<br />
+и про перец (на англ.)<br />
+Обзор менеджеров паролей  (оценки субъективны)<br />
+Шифрование диска/хранилищ</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="122" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="122" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Подробно о том, как работает BitLocker (релевантно для Windows систем) можно узнать здесь<br />
+Инструкция по созданию зашифрованной флэшки здесь<br />
+О возможностях VeraCrypt<br />
+Фишинг, вирусы</p>
+<p>TOP-10 вирусов в истории (на англ.)<br />
+Рекомендации от Gmail (для администраторов почтовых серверов организаций)<br />
+О громкой вирусе Stuxnet<br />
+Правила защиты от фишинга<br />
+Мессенджеры</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="123" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="123" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Спецификация протокола Signal, упомянутая в лекции<br />
+Протокол, используемый для безопасной передачи сообщений в мессенджере Telegram называется ﻿MTProto Mobile Protocol. Техническое описание этого протокола (на англ.)<br />
+Техническое описание MTProto на русском языке<br />
+Криптография на практике</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="124" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="124" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Введение в криптографию</p>
+<p>Доступные широкой аудитории мини-лекции от проф. Найджела Смарта о криптографии (на англ.)<br />
+Более продвинутые лекции по криптографии (для студентов-магистров, основы математики объясняются)<br />
+Для интересующихся, сайт международного криптографического сообщества IACR (International Association for Cryptologic Research)<br />
+Ютуб-канал сообщества с видеозаписями конференций и выступлений<br />
+Цифровая подпись</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="125" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="125" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>“Слепая” подпись -- разновидность протокола электронной цифровой подписи, в которой подписывающая сторона не знает сообщения, которое она подписывает, а подписывает шифр-текст этого сообщения. Зачем такая подпись нужна и как её построить описывается здесь<br />
+По этой же теме статья на англ.<br />
+Подробнее о типах электронных подписей с юридической точки зрения здесь<br />
+Электронные платежи</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="126" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="126" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Подробно об истории и устройстве пластиковой карты, а также о современных методах электронных платежей можно узнать из видео-лекции<br />
+Подробнее о 3d-secure платежах можно узнать из видео-лекции<br />
+Доступный обзор разнообразных платежных услуг описан в статье: часть 1, часть 2<br />
+Блокчейн</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="127" data-paginate="true" data-theme="gaia" lang="ru-RU" data-marpit-pagination="127" style="--paginate:true;--theme:gaia;" data-marpit-pagination-total="127">
+<p>Официальный сайт криптовалюты Биткоин со статьей Сатоши Накамото (рус.)<br />
+Доступное широкой аудитории объяснение логики блокчейна можно увидеть в мини-лекции (англ.)<br />
+Принципы работы криптовалюты Etherium описываются здесь<br />
+Бумажные издания, посвященные электронным деньгам</p>
+<p>А. Антонопулос. Интернет денег. Litres, 2018<br />
+A. Antonopoulos. Mastering Bitcoin: unlocking digital crypto currencies. &quot;O'Reilly Media, Inc. 2014</p>
+</section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),h=Symbol();const g=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[h]||(Object.defineProperty(window,h,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await g()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const w=Symbol(),b=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();(o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o))&&a!==HTMLElement?i||customElements.define(s,r(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[w])return e[w];const i=v({target:e}),n=()=>{i(),delete e[w]},l=Object.assign(n,{cleanup:n,update:()=>b(e)});return Object.defineProperty(e,w,{configurable:!0,value:l}),l},y=document.currentScript;b(y?y.getRootNode():document)}();
+</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.1.2/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t,n,r=(n||(n=1,t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),a={},i=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){a[e]=(a[e]||[]).filter((function(e){return e!==t}))},c=function(e,t){return(a[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},l=function(e,t){o[e]&&(n&&c("deactivate",i(n,t)),n=o[e],c("activate",i(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;c(e>0?"next":"prev",i(n,t))&&l(r,t)},u={off:s,on:function(e,t){return(a[e]||(a[e]=[])).push(t),s.bind(null,e,t)},fire:c,slide:function(e,t){if(!arguments.length)return o.indexOf(n);c("slide",i(o[e],t))&&l(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){c("destroy",i(n,e)),a={}}};return(t||[]).forEach((function(e){e(u)})),n||l(0),u}}),t),o=e(r);const a=document.body,i=(...e)=>history.replaceState(...e),s="",c="presenter",l="next",d=["",c,l],u="bespoke-marp-",f=`data-${u}`,m=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const a=e.toString();return`${t}//${n}${r}${a?"?":""}${a}${o}`},g=()=>a.dataset.bespokeView,p=e=>new URLSearchParams(location.search).get(e),v=(e,t={})=>{const n={location,setter:i,...t},r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter({...window.history.state??{}},"",m(r,n.location))}catch(e){console.error(e)}},h=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch{return!1}})(),y=e=>{try{return localStorage.getItem(e)}catch{return null}},b=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch{return!1}},w=e=>{try{return localStorage.removeItem(e),!0}catch{return!1}},x=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},k=e=>{e.parent.classList.add(`${u}parent`),e.slides.forEach((e=>e.classList.add(`${u}slide`))),e.on("activate",(t=>{const n=`${u}active`,r=t.slide,o=r.classList,a=!o.contains(n);if(e.slides.forEach((e=>{e.classList.remove(n),x(e,!0)})),o.add(n),x(r,!1),a){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}}))},$=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const a=t<r||t===r&&n<=o;e.setAttribute(`${f}fragment`,(a?"":"in")+"active");const i=`${f}current-fragment`;t===r&&n===o?e.setAttribute(i,"current"):e.removeAttribute(i)}))})),e.fragmentIndex=o;const a={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",a)};e.on("next",(({fragment:a=!0})=>{if(a){if(r(1))return o(t,n+1),!1;const a=t+1;e.fragments[a]&&o(a,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const a=e.fragments[t+1];a&&o(t+1,a.length-1)}})),e.on("prev",(({fragment:a=!0})=>{if(r(-1)&&a)return o(t,n-1),!1;const i=t-1;e.fragments[i]&&o(i,e.fragments[i].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)})),o(0,0)},E=document,L=()=>!(!E.fullscreenEnabled&&!E.webkitFullscreenEnabled),S=()=>!(!E.fullscreenElement&&!E.webkitFullscreenElement),P=e=>{e.fullscreen=()=>{L()&&(async()=>{S()?(E.exitFullscreen||E.webkitExitFullscreen)?.call(E):((e=E.body)=>{(e.requestFullscreen||e.webkitRequestFullscreen)?.call(e)})()})()},document.addEventListener("keydown",(t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!L()||(e.fullscreen(),t.preventDefault())}))},_=`${u}inactive`,T=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let a;const i=()=>{a&&clearTimeout(a),a=setTimeout((()=>{r.add(_),o()}),e),r.contains(_)&&(r.remove(_),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,i);setTimeout(i,0)},I=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],M=e=>{e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(I.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))},O=e=>{window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${f}load`,e?"":"hideable")}}))},A=({interval:e=250}={})=>t=>{document.addEventListener("keydown",(e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,o=0;t.parent.addEventListener("wheel",(a=>{let i=!1;const s=(e,t)=>{e&&(i=i||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),e?.parentElement&&s(e.parentElement,t)};if(0!==a.deltaX&&s(a.target,"X"),0!==a.deltaY&&s(a.target,"Y"),i)return;a.preventDefault();const c=Math.sqrt(a.deltaX**2+a.deltaY**2);if(void 0!==a.wheelDelta){if(void 0===a.webkitForce&&Math.abs(a.wheelDelta)<40)return;if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<4)return}else if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<12)return;r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const l=Date.now()-o<e,d=c<=n;if(n=c,l||d)return;let u;(a.deltaX>0||a.deltaY>0)&&(u="next"),(a.deltaX<0||a.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())}))},C=(e=`.${u}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${f}osc=${JSON.stringify(e)}]`).forEach(n)};return L()||n("fullscreen",(e=>e.style.display="none")),h||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?e?.fullscreen():"presenter"===n&&e.openPresenterView()}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:o})=>{n("prev",(e=>e.disabled=0===t&&0===o)),n("next",(n=>n.disabled=t===e.slides.length-1&&o===r.length-1))})),e.on("marp-active",(()=>x(t,!1))),e.on("marp-inactive",(()=>x(t,!0))),L()&&(e=>{for(const t of["","webkit"])E.addEventListener(t+"fullscreenchange",e)})((()=>n("fullscreen",(e=>e.classList.toggle("exit",L()&&S())))))}},D=e=>{window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),a=Number.parseInt(n,10)+1;a>=e.fragments[o].length&&(o+=1,a=0),e.slide(o,{fragment:a})}}))};var N,B,q,K,j,F,V,U={exports:{}},X=(N||(N=1,U.exports=(B=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],q=function(e){return String(e).replace(/[&<>"']/g,(function(e){return"&"+K[e]+";"}))},K={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},j="dangerouslySetInnerHTML",F={className:"class",htmlFor:"for"},V={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var a in t)!1!==t[a]&&null!=t[a]&&a!==j&&(r+=" "+(F[a]?F[a]:q(a))+'="'+q(t[a])+'"');r+=">"}if(-1===B.indexOf(e)){if(t[j])r+=t[j].__html;else for(;n.length;){var i=n.pop();if(i)if(i.pop)for(var s=i.length;s--;)n.push(i[s]);else r+=!0===V[i]?i:q(i)}r+=e?"</"+e+">":""}return V[r]=!0,r})),U.exports),H=e(X);const R=({children:e})=>H(null,null,...e),W=`${u}presenter-`,J={container:`${W}container`,dragbar:`${W}dragbar-container`,next:`${W}next`,nextContainer:`${W}next-container`,noteContainer:`${W}note-container`,noteWrapper:`${W}note-wrapper`,noteButtons:`${W}note-buttons`,infoContainer:`${W}info-container`,infoPage:`${W}info-page`,infoPageText:`${W}info-page-text`,infoPagePrev:`${W}info-page-prev`,infoPageNext:`${W}info-page-next`,noteButtonsBigger:`${W}note-bigger`,noteButtonsSmaller:`${W}note-smaller`,infoTime:`${W}info-time`,infoTimer:`${W}info-timer`},Y=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=J.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",H(R,null,H("div",{class:J.nextContainer},H("iframe",{class:J.next,src:"?view=next"})),H("div",{class:J.dragbar}),H("div",{class:J.noteContainer},H("div",{class:J.noteWrapper}),H("div",{class:J.noteButtons},H("button",{class:J.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),H("button",{class:J.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),H("div",{class:J.infoContainer},H("div",{class:J.infoPage},H("button",{class:J.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),H("span",{class:J.infoPageText}),H("button",{class:J.infoPageNext,tabindex:"-1",title:"Next"},"Next")),H("time",{class:J.infoTime,title:"Current time"}),H("time",{class:J.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(J.dragbar).addEventListener("mousedown",(()=>{t=!0,r(J.dragbar).classList.add("active")})),window.addEventListener("mouseup",(()=>{t=!1,r(J.dragbar).classList.remove("active")})),window.addEventListener("mousemove",(e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(J.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)})),r(J.nextContainer).addEventListener("click",(()=>e.next()));const n=r(J.next),o=(a=n,(e,t)=>a.contentWindow?.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin));var a;n.addEventListener("load",(()=>{r(J.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>o(e,t)))}));const i=document.querySelectorAll(".bespoke-marp-note");i.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(J.noteWrapper).appendChild(e)})),e.on("activate",(()=>i.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide())))));let s=0;const c=e=>{s=Math.max(-5,s+e),r(J.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},l=()=>c(1),d=()=>c(-1),u=r(J.noteButtonsBigger),f=r(J.noteButtonsSmaller);u.addEventListener("click",(()=>{u.blur(),l()})),f.addEventListener("click",(()=>{f.blur(),d()})),document.addEventListener("keydown",(e=>{"+"===e.key&&l(),"-"===e.key&&d()}),!0),e.on("activate",(({index:t})=>{r(J.infoPageText).textContent=`${t+1} / ${e.slides.length}`}));const m=r(J.infoPagePrev),g=r(J.infoPageNext);m.addEventListener("click",(t=>{m.blur(),e.prev({fragment:!t.shiftKey})})),g.addEventListener("click",(t=>{g.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1}));let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),a=t(n/1e3/60%60),i=t(n/36e5%24);r(J.infoTime).textContent=e.toLocaleTimeString(),r(J.infoTimer).textContent=`${i}:${a}:${o}`};v(),setInterval(v,250),r(J.infoTimer).addEventListener("click",(()=>{p=new Date}))})(e)},z=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:G},presenterUrl:{enumerable:!0,get:Q}}),h&&document.addEventListener("keydown",(t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))};function G(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,W+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function Q(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),m(e)}const Z=e=>{const t=g();return t===l&&e.appendChild(document.createElement("span")),{[s]:z,[c]:Y,[l]:D}[t]},ee=e=>{e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))},te=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},ne=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?te(p("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:a,slides:i}=e,s=o(0,r(t,i.length-1)),c=o(0,r(n||0,a[s].length-1));s===e.slide()&&c===e.fragmentIndex||e.slide(s,{fragment:c})})((()=>{if(location.hash){const[t]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(t))return(te(t)??1)-1;const r=document.getElementById(t)||document.querySelector(`a[name="${CSS.escape(t)}"]`);if(r){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(r)){const t=e.fragments?.[o],a=r.closest("[data-marpit-fragment]");if(t&&a){const e=t.indexOf(a);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||v({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{o(),window.addEventListener("hashchange",(()=>r((()=>{o({fragment:!1}),v({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>o()))})),n=!1}),0)}},re=(e={})=>{const t=e.key||window.history.state?.marpBespokeSyncKey||Math.random().toString(36).slice(2),n=`bespoke-marp-sync-${t}`;var r;r={marpBespokeSyncKey:t},v({},{setter:(e,...t)=>i({...e,...r},...t)});const o=()=>{const e=y(n);return e?JSON.parse(e):Object.create(null)},a=e=>{const t=o(),r={...t,...e(t)};return b(n,JSON.stringify(r)),r},s=()=>{window.removeEventListener("pageshow",s),a((e=>({reference:(e.reference||0)+1})))};return e=>{s(),Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let r=!0;setTimeout((()=>{e.on("fragment",(e=>{r&&a((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),o=JSON.parse(t.newValue);if(n.index!==o.index||n.fragmentIndex!==o.fragmentIndex)try{r=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{r=!0}}}));const i=()=>{const{reference:e}=o();void 0===e||e<=1?w(n):a((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",s),i()})),e.on("destroy",i)}},{PI:oe,abs:ae,sqrt:ie,atan2:se}=Math,ce={passive:!0},le=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,a=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",(({touches:e})=>{r=1===e.length?a(e[0]):void 0}),ce),o.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=a(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=ie(ae(n)**2+ae(o)**2),r.radian=se(n,o)}else r=void 0})),o.addEventListener("touchend",(o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+oe)%(2*oe)-oe;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}}),ce)},de=new Map;de.clear(),de.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const ue={both:"",outgoing:"outgoing-",incoming:"incoming-"},fe={forward:"",backward:"-backward"},me=e=>`--marp-bespoke-transition-animation-${e}`,ge=e=>`--marp-transition-${e}`,pe=me("name"),ve=me("duration"),he=e=>new Promise((t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",(()=>o(n))),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const a=getComputedStyle(r).getPropertyValue(ge("duration"));a&&(n.defaultDuration=a),((e,t)=>{requestAnimationFrame((()=>{e.style.animationPlayState="running",requestAnimationFrame((()=>t(void 0)))}))})(r,o)})),ye=async e=>de.has(e)?de.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(ue))for(const[a,i]of Object.entries(fe)){const s=`marp-${o}transition${i}-${e}`;n.push(he(s).then((e=>{t[a]=t[a]||{},t[a][r]=e?{...e,name:s}:void 0})))}return Promise.all(n).then((()=>t))})(e).then((t=>(de.set(e,t),t))),be=e=>Object.values(e).flatMap(Object.values).every((e=>!e)),we=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[pe]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[me("direction")]="reverse"),e}})();return!o&&n?we(e,{type:t,backward:!1}):o||{[pe]:"__bespoke_marp_transition_no_animation__"}},xe=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch{}},ke="_tSId",$e="_tA",Ee="bespoke-marp-transition-warming-up",Le=window.matchMedia("(prefers-reduced-motion: reduce)"),Se="__bespoke_marp_transition_reduced_outgoing__",Pe="__bespoke_marp_transition_reduced_incoming__",_e={forward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}},backward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}}},Te=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{const t=[...new Set(e).values()];return Promise.all(t.map((e=>ye(e)))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap((e=>[e.dataset.transition,e.dataset.transitionBack].flatMap((e=>{const t=xe(e);return[t?.name,t?.builtinFallback?`__builtin__${t.name}`:void 0]})).filter((e=>!!e))))).then((()=>{document.querySelectorAll("style").forEach((e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,(e=>e.slice(0,-1)+"!important"+e.slice(-1)))}))}));const r=(n,{back:r,cond:o})=>a=>{const i=t();if(i)return!!a[$e]||!("object"!=typeof i||(i.skipTransition(),!a.forSync));if(!o(a))return!0;const s=e.slides[e.slide()],c=()=>a.back??r,l="data-transition"+(c()?"-back":""),d=s.querySelector(`section[${l}]`);if(!d)return!0;const u=xe(d.getAttribute(l)??void 0);return!u||((async(e,{builtinFallback:t=!0}={})=>{let n=await ye(e);if(be(n)){if(!t)return;return n=await ye(`__builtin__${e}`),be(n)?void 0:n}return n})(u.name,{builtinFallback:u.builtinFallback}).then((e=>{if(!e){t(!0);try{n(a)}finally{t(!1)}return}let r=e;Le.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=_e);const o=document.getElementById(ke);o&&o.remove();const i=document.createElement("style");i.id=ke,document.head.appendChild(i),((e,t)=>{const n=[`:root{${ge("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{const n=e[t].both?.defaultDuration||e[t].outgoing?.defaultDuration||e[t].incoming?.defaultDuration;return"forward"===t?n:n||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${ve}:${o};}`);const a=e=>Object.entries(e).map((([e,t])=>`${e}:${t};`)).join("");return n.push(`::view-transition-old(root){${a(we(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${a(we(e,{...t,type:"incoming"}))}}`),n})(r,{backward:c(),duration:u.duration}).forEach((e=>i.sheet?.insertRule(e)));const s=document.documentElement.classList;s.add(Ee);let l=!1;const d=()=>{l||(n(a),l=!0,s.remove(Ee))},f=()=>{t(!1),i.remove(),s.remove(Ee)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(f)}catch(e){console.error(e),d(),f()}})),!1)};e.on("prev",r((t=>e.prev({...t,[$e]:!0})),{back:!0,cond:e=>e.index>0&&!((e.fragment??1)&&n.fragmentIndex>0)})),e.on("next",r((t=>e.next({...t,[$e]:!0})),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout((()=>{e.on("slide",r((t=>e.slide(t.index,{...t,[$e]:!0})),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))}),0),e.on("fragment",(e=>{n=e}))};let Ie;const Me=()=>(void 0===Ie&&(Ie="wakeLock"in navigator&&navigator.wakeLock),Ie),Oe=async()=>{const e=Me();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ae=async()=>{if(!Me())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&Oe()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await Oe(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=p("view");a.dataset.bespokeView=e===l||e===c?e:""})();const t=(e=>{const t=p(e);return v({[e]:void 0}),t})("sync")||void 0;o.from(e,((...e)=>{const t=d.findIndex((e=>g()===e));return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[1,1,0],re({key:t})],[[1,1,1],Z(e)],[[1,1,0],M],[[1,1,1],k],[[1,0,0],T()],[[1,1,1],O],[[1,1,1],ne({history:!1})],[[1,1,0],A()],[[1,1,0],P],[[1,0,0],ee],[[1,1,0],le()],[[1,0,0],C()],[[1,0,0],Te],[[1,1,1],$],[[1,1,0],Ae]))})()}();</script></body></html>
